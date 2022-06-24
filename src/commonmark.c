@@ -232,7 +232,7 @@ static int S_render_node(cmark_renderer *renderer, cmark_node *node,
     }
     if (entering) {
       if (cmark_node_get_list_type(node->parent) == CMARK_BULLET_LIST) {
-        LIT("  - ");
+        LIT("- ");
         renderer->begin_content = true;
       } else {
         LIT(listmarker);
