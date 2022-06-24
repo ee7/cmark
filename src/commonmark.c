@@ -278,6 +278,10 @@ static int S_render_node(cmark_renderer *renderer, cmark_node *node,
     if (numticks < 3) {
       numticks = 3;
     }
+    if (strncmp(info, "exercism/", 9) == 0) {
+      fencechar[0] = '~';
+      numticks += 1;
+    }
     for (i = 0; i < numticks; i++) {
       LIT(fencechar);
     }
