@@ -420,7 +420,7 @@ static int S_render_node(cmark_renderer *renderer, cmark_node *node,
       if (entering) {
         LIT("[");
       } else {
-        LIT("](");
+        LIT("][");
         OUT(cmark_node_get_url(node), false, URL);
         title = cmark_node_get_title(node);
         if (strlen(title) > 0) {
@@ -428,7 +428,7 @@ static int S_render_node(cmark_renderer *renderer, cmark_node *node,
           OUT(title, false, TITLE);
           LIT("\"");
         }
-        LIT(")");
+        LIT("]");
       }
     }
     break;
