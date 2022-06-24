@@ -392,9 +392,9 @@ static int S_render_node(cmark_renderer *renderer, cmark_node *node,
     // because **x** is STRONG(x):
     if (node->parent && node->parent->type == CMARK_NODE_EMPH &&
         node->next == NULL && node->prev == NULL) {
-      emph_delim = "_";
-    } else {
       emph_delim = "*";
+    } else {
+      emph_delim = "_";
     }
     if (entering) {
       LIT(emph_delim);
