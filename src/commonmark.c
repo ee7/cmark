@@ -222,12 +222,12 @@ static int S_render_node(cmark_renderer *renderer, cmark_node *node,
         tmp = tmp->prev;
         list_number += 1;
       }
-      // we ensure a width of at least 2 so
-      // we get nice transition from single digits
+      // we don't ensure a width of at least 2 so
+      // we don't get nice transition from single digits
       // to double
       snprintf(listmarker, LISTMARKER_SIZE, "%d%s%s", list_number,
                list_delim == CMARK_PAREN_DELIM ? ")" : ".",
-               list_number < 10 ? "  " : " ");
+               " ");
       marker_width = strlen(listmarker);
     }
     if (entering) {
