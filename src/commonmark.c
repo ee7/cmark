@@ -281,7 +281,6 @@ static int S_render_node(cmark_renderer *renderer, cmark_node *node,
     for (i = 0; i < numticks; i++) {
       LIT(fencechar);
     }
-    LIT(" ");
     OUT(info, false, LITERAL);
     CR();
     OUT(cmark_node_get_literal(node), false, LITERAL);
