@@ -213,7 +213,7 @@ static int S_render_node(cmark_renderer *renderer, cmark_node *node,
 
   case CMARK_NODE_ITEM:
     if (cmark_node_get_list_type(node->parent) == CMARK_BULLET_LIST) {
-      marker_width = 4;
+      marker_width = 2;
     } else {
       list_number = cmark_node_get_list_start(node->parent);
       list_delim = cmark_node_get_list_delim(node->parent);
@@ -222,7 +222,7 @@ static int S_render_node(cmark_renderer *renderer, cmark_node *node,
         tmp = tmp->prev;
         list_number += 1;
       }
-      // we ensure a width of at least 4 so
+      // we ensure a width of at least 2 so
       // we get nice transition from single digits
       // to double
       snprintf(listmarker, LISTMARKER_SIZE, "%d%s%s", list_number,
